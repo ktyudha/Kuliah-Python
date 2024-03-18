@@ -1,4 +1,3 @@
-# Modul (module) untuk menghitung bilangan genap dan ganjil
 from operasi_hitung import hitung_genap_ganjil
 
 def main():
