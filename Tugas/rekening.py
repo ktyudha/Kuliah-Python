@@ -20,10 +20,9 @@ class Rekening:
     def tarik_tunai(self, jumlah):
         if jumlah <= self.saldo:
             self.saldo -= jumlah
-            print(f"{self.nama_pemilik} menarik tunai sejumlah {jumlah}. Saldo sekarang: {self.saldo}")
+            print(f"{self.name} menarik tunai sejumlah {jumlah}. Saldo sekarang: {self.saldo}")
         else:
             print("Saldo tidak mencukupi.")
-
 
 pin = input("Masukkan Pin Rekening: ")
 
