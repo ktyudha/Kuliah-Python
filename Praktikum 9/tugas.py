@@ -23,7 +23,7 @@ def list_interfaces():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     
     while True:
-        num_bytes = max_interfaces * struct_size
+        num_bytes = max_interfaces * struct_size 
         interface_names = array.array('B', b'\0' * num_bytes)
         sock_info = fcntl.ioctl(
             sock.fileno(), SIOCGIFCONF, struct.pack('iP', num_bytes, interface_names.buffer_info()[0]))

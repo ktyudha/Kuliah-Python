@@ -44,7 +44,6 @@ class Pinger(object):
             time_spent = time.time() - start_time
             if not readable[0]:  # Timeout
                 return
-
             recv_packet, addr = sock.recvfrom(1024)
             icmp_header = recv_packet[20:28]
             type, code, checksum, packet_ID, sequence = struct.unpack("bbHHh", icmp_header)
@@ -52,7 +51,6 @@ class Pinger(object):
                 bytes_In_double = struct.calcsize("d")
                 time_sent = struct.unpack("d", recv_packet[28:28 + bytes_In_double])[0]
                 return time.time() - time_sent
-
             time_remaining -= time_spent
             if time_remaining <= 0:
                 return

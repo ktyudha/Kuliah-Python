@@ -42,4 +42,3 @@ def list_interfaces():
 if __name__ == '__main__':
     interfaces = list_interfaces()
     print("List interface:", list_interfaces())
-    #print ("This machine has %s network interfaces: %s." %(len(interfaces), interfaces))
