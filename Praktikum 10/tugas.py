@@ -51,7 +51,7 @@ def main():
         choice = input("Masukkan pilihan anda: ")
         if choice == '1':
             interface = input("Masukkan Interface: ")
-            print("Ping to", interface)
+            print ("Interface [%s] is: %s" %(interface, get_interface_status(interface)))
         elif choice == '2':
             test_socketpair()
             break
