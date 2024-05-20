@@ -1,10 +1,13 @@
 import socket
 import sys
-SERVER_PATH = "/tmp/python_unix_socket_server"
+
+SERVER_PATH = "./python_unix_socket_server"
+
 def run_unix_domain_socket_client():
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
     server_address = SERVER_PATH
     print ("connecting to %s" % server_address)
+
     try:
         sock.connect(server_address)
     except socket.error as msg:
@@ -25,5 +28,6 @@ def run_unix_domain_socket_client():
     finally:
         print ("Closing client")
         sock.close()
+
 if __name__ == '__main__':
     run_unix_domain_socket_client()
