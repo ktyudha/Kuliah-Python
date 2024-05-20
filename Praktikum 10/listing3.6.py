@@ -11,6 +11,7 @@ def get_interface_status(ifname):
     nm = nmap.PortScanner()
     nm.scan(ip_address, SAMPLE_PORTS)
     return nm[ip_address].state()
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Python networking utils')
     parser.add_argument('--ifname', action="store", dest="ifname", required=True)

@@ -1,7 +1,7 @@
 import socket
 import sys
 
-SERVER_PATH = "./python_unix_socket_server"
+SERVER_PATH = "/tmp/python_unix_socket_server"
 
 def run_unix_domain_socket_client():
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
