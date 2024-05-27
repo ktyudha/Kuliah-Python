@@ -3,23 +3,24 @@ import sys
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 DEFAULT_HOST = '127.0.0.1'
-DEFAULT_PORT = 8800
+DEFAULT_PORT = 8088
 
 class RequestHandler(BaseHTTPRequestHandler):
     """ Custom request handler"""
-def do_GET(self):
-    """ Handler for the GET requests """
-    self.send_response(200)
-    self.send_header('Content-type','text/html')
-    self.end_headers()
-    self.wfile.write("Hello from server!")
-    return
+    def do_GET(self):
+        """ Handler for the GET requests """
+        self.send_response(200)
+        self.send_header('Content-type','text/html')
+        self.end_headers()
+        self.wfile.write("Hello from server!".encode())
+        return
     
 class CustomHTTPServer(HTTPServer):
     "A custom HTTP server"
     def __init__(self, host, port):
         server_address = (host, port)
         HTTPServer.__init__(self, server_address, RequestHandler)
+
 def run_server(port):
     try:
         server= CustomHTTPServer(DEFAULT_HOST, port)
