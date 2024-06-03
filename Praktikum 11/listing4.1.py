@@ -2,7 +2,7 @@ import argparse
 import urllib.request
 
 
-REMOTE_SERVER_HOST = 'http://www.pens.ac.id/'
+REMOTE_SERVER_HOST = 'http://www.python.org/'
 class HTTPClient:
     def __init__(self, host):
         self.host = host

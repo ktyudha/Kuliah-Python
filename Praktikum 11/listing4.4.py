@@ -4,14 +4,15 @@ ID_USERNAME = 'signup-user-name'
 ID_EMAIL = 'signup-user-email'
 ID_PASSWORD = 'signup-user-password'
 USERNAME = 'username'
-EMAIL = 'you@email.com'
-PASSWORD = 'yourpassword'
+EMAIL = 'admin@ent.pens.ac.id'
+PASSWORD = 'password'
 
-SIGNUP_URL = 'https://twitter.com/account/create'
+SIGNUP_URL = 'https://cirt.pens.ac.id/login'
+
 
 def submit_form():
     """Submit a form"""
-    payload = {ID_USERNAME : USERNAME,
+    payload = {
     ID_EMAIL : EMAIL,
     ID_PASSWORD : PASSWORD,}
     # make a get request
@@ -20,6 +21,7 @@ def submit_form():
     # send POST request
     resp = requests.post(SIGNUP_URL, payload)
     print ("Headers from a POST request response: %s" %resp.headers)
+    print("Success")
 
 if __name__ == '__main__':
     submit_form()
